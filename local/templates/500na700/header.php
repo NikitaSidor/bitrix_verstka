@@ -26,7 +26,26 @@ use Bitrix\Main\Page\Asset;
         <div class="wrapper">
             <div class="header"><img class="header__logo" src="<?=SITE_TEMPLATE_PATH?>/img/Logo.svg">
                 <div class="header__menu">
-                    <nav>
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "500na700-header",
+                        array(
+                            "ROOT_MENU_TYPE" => "top",  // Тип меню (то, что вы создали)
+                            "MAX_LEVEL" => "1",          // Максимальный уровень вложенности
+                            "CHILD_MENU_TYPE" => "submenu", // Тип меню для вложенных пунктов
+                            "USE_EXT" => "Y",            // Подключать файлы .menu_ext.php
+                            "DELAY" => "N",              // Откладывать выполнение компонента
+                            "ALLOW_MULTI_SELECT" => "N", // Разрешить несколько активных пунктов одновременно
+                            "MENU_CACHE_TYPE" => "A",    // Тип кеширования
+                            "MENU_CACHE_TIME" => "3600", // Время кеширования (сек.)
+                            "MENU_CACHE_USE_GROUPS" => "Y", // Учитывать права доступа
+                            "MENU_CACHE_GET_VARS" => array( // Дополнительные переменные, влияющие на кеширование
+                            ),
+                            "COMPONENT_TEMPLATE" => "horizontal_multilevel"
+                        ),
+                        false
+                    );?>
+                    <!--nav>
                         <ul class="header__nav">
                             <li class="header__nav-item header__nav-item_paragraph">
                                 <div class="header__nav-point"><a href="#">О нас</a> <img class="arrow"
@@ -50,7 +69,8 @@ use Bitrix\Main\Page\Asset;
                             <li class="header__nav-item"><a class="link" href="#faq">FAQ</a></li>
                             <li class="header__nav-item"><a class="link" href="#subscribe">Контакты</a></li>
                         </ul>
-                    </nav><button class="button_white button_open-modal">Связаться с нами</button>
+                    </nav-->
+                    <button class="button_white button_open-modal">Связаться с нами</button>
                 </div>
                 <div class="burger burger_main"></div>
             </div>

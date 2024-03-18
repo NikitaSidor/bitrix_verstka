@@ -13,15 +13,26 @@
                                     src="<?=SITE_TEMPLATE_PATH?>/img/vk.svg"></a>
                     </div>
                 </div>
-                <nav>
-                    <ul class="footer__nav">
-                        <li class="footer__nav-item"><a class="link" href="#">О нас</a></li>
-                        <li class="footer__nav-item"><a class="link" href="#projects">Проекты</a></li>
-                        <li class="footer__nav-item"><a class="link" href="#news">Новости</a></li>
-                        <li class="footer__nav-item"><a class="link" href="#faq">FAQ</a></li>
-                        <li class="footer__nav-item"><a class="link" href="#subscribe">Контакты</a></li>
-                    </ul>
-                </nav>
+                
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "500na700-footer",
+                    array(
+                        "ROOT_MENU_TYPE" => "footer",  // Тип меню (то, что вы создали)
+                        "MAX_LEVEL" => "1",          // Максимальный уровень вложенности
+                        "CHILD_MENU_TYPE" => "submenu", // Тип меню для вложенных пунктов
+                        "USE_EXT" => "Y",            // Подключать файлы .menu_ext.php
+                        "DELAY" => "N",              // Откладывать выполнение компонента
+                        "ALLOW_MULTI_SELECT" => "N", // Разрешить несколько активных пунктов одновременно
+                        "MENU_CACHE_TYPE" => "A",    // Тип кеширования
+                        "MENU_CACHE_TIME" => "3600", // Время кеширования (сек.)
+                        "MENU_CACHE_USE_GROUPS" => "Y", // Учитывать права доступа
+                        "MENU_CACHE_GET_VARS" => array( // Дополнительные переменные, влияющие на кеширование
+                        ),
+                        "COMPONENT_TEMPLATE" => "horizontal_multilevel"
+                    ),
+                    false
+                );?>
                 <div class="footer__info"><a>г. Горгород,<br>ул. Мегаполисная, 1</a> <a class="link"
                                                                                         href="tel:+70000000000">+7 (000) 000-00-00</a> <a class="link"
                                                                                                                                           href="mailto:john@example.com">email@email.ru</a></div>
