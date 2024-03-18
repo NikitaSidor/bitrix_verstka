@@ -1,0 +1,16 @@
+.idea
+bitrix
+content
+search
+personal
+.access.php
+.htaccess
+.section.php
+.top.menu.php
+404.php
+auth.php
+favicon.ico
+index_inc.php
+robots.txt
+sect_inc.php
+urlrewrite.php

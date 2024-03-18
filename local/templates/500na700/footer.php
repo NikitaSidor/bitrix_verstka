@@ -18,7 +18,7 @@
                     "bitrix:menu",
                     "500na700-footer",
                     array(
-                        "ROOT_MENU_TYPE" => "footer",  // Тип меню (то, что вы создали)
+                        "ROOT_MENU_TYPE" => "foote",  // Тип меню (то, что вы создали)
                         "MAX_LEVEL" => "1",          // Максимальный уровень вложенности
                         "CHILD_MENU_TYPE" => "submenu", // Тип меню для вложенных пунктов
                         "USE_EXT" => "Y",            // Подключать файлы .menu_ext.php

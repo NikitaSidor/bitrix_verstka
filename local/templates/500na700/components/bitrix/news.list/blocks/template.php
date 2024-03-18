@@ -21,7 +21,7 @@
                     <img src="//affdskbmdo.cloudimg.io/v7/_stockcars_/7/JER1001_106210_1.jpg">
                 <?php endif; ?>
             </div>
-            <h2 class="news__title"><?=$arItem['NAME']?></h2>
+            <a href="<?=$arItem['DETAIL_PAGE_URL']?>"><h2 class="news__title"><?=$arItem['NAME']?></h2></a>
             <p class="news__subtitle"><?=$arResult['PREVIEW_TEXT']?></p>
             <p class="news__date"><?=$arItem['ACTIVE_FROM']?></p>
         </div>
